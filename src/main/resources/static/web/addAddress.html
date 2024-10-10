@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<!--edge browser H5 compatibility setting-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--360 browser H5 compatibility setting-->
+	<meta name="renderer" content="webkit" />
+	<title>Computer Store</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Import core files-->
+	<script src="../bootstrap3/js/holder.js"></script>
+	<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+	<script src="../bootstrap3/js/bootstrap.js"></script>
+	<!-- Font icons -->
+	<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="../css/top.css" />
+	<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+	<!--		<script type="text/javascript" src="../js/distpicker.data.js"></script>-->
+	<!--		<script type="text/javascript" src="../js/distpicker.js"></script>-->
+
+</head>
+
+<body>
+<!--Header-->
+<header class="header">
+	<!--Computer store logo-->
+	<div class="row">
+		<div class="col-md-3">
+			<a href="index.html">
+				<img src="../images/index/stumalllogo.png" />
+			</a>
+		</div>
+		<!--Quick options-->
+		<div class="col-md-9 top-item">
+			<ul class="list-inline pull-right">
+				<li><a href="favorites.html"><span class="fa fa-heart"></span>&nbsp;Favorites</a></li>
+				<li class="li-split">|</li>
+				<li><a href="orders.html"><span class="fa fa-file-text"></span>&nbsp;Orders</a></li>
+				<li class="li-split">|</li>
+				<li><a href="cart.html"><span class="fa fa-cart-plus"></span>&nbsp;Cart</a></li>
+				<li class="li-split">|</li>
+				<li>
+					<!--Dropdown list button: Manage-->
+					<div class="btn-group">
+						<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+							<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Manage <span class="caret"></span></span>
+						</button>
+						<ul class="dropdown-menu top-dropdown-ul" role="menu">
+							<li><a href="password.html">Change Password</a></li>
+							<li><a href="userdata.html">Personal Info</a></li>
+							<li><a href="upload.html">Upload Avatar</a></li>
+							<li><a href="address.html">Shipping Management</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="li-split">|</li>
+				<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Login</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<!--Navigation -->
+<!--Divide navigation and top-->
+<div class="row top-nav">
+	<div class="col-md-6">
+		<ul class="nav nav-pills">
+			<li>
+				<a href="#"></a>
+			</li>
+			<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+			<li><a href="#">Flash Sale</a></li>
+			<li><a href="#">Coupons</a></li>
+			<li><a href="#">Computer VIP</a></li>
+			<li><a href="#">Takeout</a></li>
+			<li><a href="#">Supermarket</a></li>
+		</ul>
+	</div>
+	<div class="col-md-6">
+		<form action="search.html" class="form-inline pull-right" role="form">
+			<div class="form-group">
+				<input type="text" class="form-control" id="search" name="search" placeholder="Please enter product name to search">
+			</div>
+			<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+		</form>
+	</div>
+</div>
+<!--Header ends-->
+<!--Navigation ends-->
+<div class="container">
+	<div class="col-md-2">
+		<!--Left navigation starts-->
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<!--Main option: My Orders-->
+					<p class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">My Orders</a>
+					</p>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse">
+					<div class="panel-body">
+						<div><a href="orders.html">All Orders</a></div>
+						<div><a href="orders.html">Pending Payment</a></div>
+						<div><a href="orders.html">Pending Receipt</a></div>
+						<div><a href="orders.html">Pending Review</a></div>
+						<div><a href="orders.html">Return/Refund</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<!--Main option: Profile Modification-->
+					<p class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Profile Modification</a>
+					</p>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse in">
+					<div class="panel-body">
+						<div><a href="password.html">Change Password</a></div>
+						<div><a href="userdata.html">Personal Information</a></div>
+						<div><a href="upload.html">Upload Avatar</a></div>
+						<div><a href="address.html"><b>Shipping Management</b></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Left navigation ends-->
+	</div>
+	<div class="col-md-10">
+		<div class="panel panel-default">
+			<ul class="nav nav-tabs">
+				<li><a href="password.html">Change Password</a></li>
+				<li><a href="userdata.html">Personal Information</a></li>
+				<li><a href="upload.html">Upload Avatar</a></li>
+				<li class="active"><a href="#">Shipping Management</a></li>
+			</ul>
+			<div class="panel-body">
+				<!--New shipping address form starts-->
+				<form id="form-add-new-address" class="form-horizontal" role="form">
+					<div class="form-group">
+						<label class="col-md-2 control-label"><span class="txtred">*</span>Recipient：</label>
+						<div class="col-md-8">
+							<input name="name" type="text" class="form-control" placeholder="Please enter recipient's name">
+						</div>
+					</div>
+					<div class="address_content" data-toggle="distpicker">
+						<div class="form-group">
+							<label class="col-md-2 control-label"><span class="txtred">*</span>Province/Municipality：</label>
+							<div class="col-md-3">
+								<select id="province-list" name="provinceCode" class="form-control" data-province="---- Select Province ----"></select>
+							</div>
+							<label class="col-md-2 control-label"><span class="txtred">*</span>City：</label>
+							<div class="col-md-3">
+								<select id="city-list" name="cityCode" class="form-control" data-city="---- Select City ----"></select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-2 control-label"><span class="txtred">*</span>District/County：</label>
+							<div class="col-md-3">
+								<select id="area-list" name="areaCode" class="form-control" data-district="---- Select District ----"></select>
+							</div>
+							<label class="col-md-2 control-label">Zip Code：</label>
+							<div class="col-md-3">
+								<input name="zip" type="text" class="form-control" placeholder="Please enter zip code">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label"><span class="txtred">*</span>Detailed Address：</label>
+						<div class="col-md-8">
+							<textarea name="address" class="form-control" rows="3" placeholder="Enter detailed shipping address, including community name, building number, etc."></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label"><span class="txtred">*</span>Mobile：</label>
+						<div class="col-md-3">
+							<input name="phone" type="text" class="form-control" placeholder="Please enter mobile number">
+						</div>
+						<label class="col-md-2 control-label">Landline：</label>
+						<div class="col-md-3">
+							<input name="tel" type="text" class="form-control" placeholder="Please enter landline number">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">Address Type：</label>
+						<div class="col-md-8">
+							<input name="tag" type="text" class="form-control" placeholder="Please enter address type, e.g.: Home, Office, or School">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label"><a href="address.html">Return</a>&nbsp;&nbsp;&nbsp;</label>
+						<div class="col-sm-10">
+							<input id="btn-add-new-address" type="button" class="col-md-1 btn btn-primary" value="Save" />
+							<input type="reset" class="col-md-offset-1 col-md-1 btn btn-primary" value="Reset" />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Footer starts-->
+<div class="clearfix"></div>
+<footer class="footer">
+	<!-- Quality assurance, custom tailoring, etc.-->
+	<div class="text-center rights container">
+		<div class="col-md-offset-2 col-md-2">
+			<span class="fa fa-thumbs-o-up"></span>
+			<p>High Quality</p>
+		</div>
+		<div class="col-md-2">
+			<span class="fa fa-address-card-o"></span>
+			<p>Private Customization</p>
+		</div>
+		<div class="col-md-2">
+			<span class="fa fa-graduation-cap"></span>
+			<p>Student Discount</p>
+		</div>
+		<div class="col-md-2">
+			<span class="fa fa-bitcoin"></span>
+			<p>Exclusive Privilege</p>
+		</div>
+	</div>
+	<!--Contact us, download client, etc.-->
+	<div class="container beforeBottom">
+		<div class="col-md-offset-1 col-md-3">
+			<div><img src="../images/index/stumalllogo.png" alt="" class="footLogo" /></div>
+			<div><img src="../images/index/footerFont.png" alt="" /></div>
+		</div>
+		<div class="col-md-4 callus text-center">
+			<div class="col-md-4">
+				<ul>
+					<li><a href="#"><p>Help</p></a></li>
+					<li><a href="#">Guidance</a></li>
+					<li><a href="#">Service</a></li>
+					<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<ul>
+					<li><a href="#"><p>Seller connect</p></a></li>
+					<li><a href="#">Seller register</a></li>
+					<li><a href="#">Seller backend</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<ul>
+					<li><a href="#"><p>About us</p></a></li>
+					<li><a href="#">About store</a></li>
+					<li><a href="#">Contact us</a></li>
+					<li>
+						<span class="fa fa-wechat"></span>
+						<span class="fa fa-weibo"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="col-md-5">
+				<p>Computer Store Client</p>
+				<img src="../images/index/ios.png" class="lf">
+				<img src="../images/index/android.png" alt="" class="lf" />
+			</div>
+			<div class="col-md-6">
+				<img src="../images/index/erweima.png">
+			</div>
+		</div>
+	</div>
+	<!-- Page footer - registration number #footer -->
+</footer>
+<!--Footer ends-->
+
+		<script type="text/javascript">
+			// value=0 应该对应Area 的 Code
+			let defaultOption = "<option value='-1'> --- 请选择 --- </option>"
+
+			$(document).ready(function (){
+				$("#province-list").append(defaultOption)
+				$("#city-list").append(defaultOption)
+				$("#area-list").append(defaultOption)
+
+				showProvinceList();
+			})
+			$("#province-list").change(function () {
+				updateCityOptions($(this).val());
+			})
+			$("#city-list").change(function () {
+				updateAreaOptions($(this).val());
+			})
+
+			function showProvinceList() {
+				$.ajax({
+					url: "../api/districts/",
+					type: "GET",
+					data: "parent=86",
+					dataType: "json",
+					success: function (json) {
+						console.log("Success response:", json);
+						if (json.code === 200) {
+							let list = json.data;
+							for (let i = 0; i < list.length; i++) {
+								let option = "<option value='"+list[i].code+"'>"+list[i].name+"</option>"
+								$("#province-list").append(option)
+							}
+						} else {
+							alert("Province info load unsuccessful！" + json.message);
+						}
+					},
+					error: function (xhr) {
+						alert("发生未知错误！" + xhr.status);
+					}
+				});
+			}
+
+			function updateCityOptions(code) {
+				if (code === -1) {
+					return;
+				}
+
+				$("#city-list").html(defaultOption);
+				$("#area-list").html(defaultOption);
+				// cascading options for child selects
+				$.ajax({
+					url: `http://localhost:8080/api/districts/?parent=${code}`,
+					type: "GET",
+					dataType: "json",
+					success: function (json) {
+						console.log("Success response:", json);
+						if (json.code === 200) {
+							let list = json.data;
+							for (let i = 0; i < list.length; i++) {
+								let option = "<option value='"+list[i].code+"'>"+list[i].name+"</option>"
+								$("#city-list").append(option)
+							}
+						} else {
+							alert("City info load unsuccessful！" + json.message);
+						}
+					},
+					error: function (xhr) {
+						alert("发生未知错误！" + xhr.status);
+					}
+				});
+			}
+
+			function updateAreaOptions(code) {
+				if (code === -1) {
+					return;
+				}
+
+				$("#area-list").html(defaultOption);
+				// cascading options for child selects
+				$.ajax({
+					url: `http://localhost:8080/api/districts/?parent=${code}`,
+					type: "GET",
+					dataType: "json",
+					success: function (json) {
+						console.log("Success response:", json);
+						if (json.code === 200) {
+							let list = json.data;
+							for (let i = 0; i < list.length; i++) {
+								let option = "<option value='"+list[i].code+"'>"+list[i].name+"</option>"
+								$("#area-list").append(option)
+							}
+						} else {
+							alert("Area info load unsuccessful！" + json.message);
+						}
+					},
+					error: function (xhr) {
+						alert("发生未知错误！" + xhr.status);
+					}
+				});
+			}
+
+			$("#btn-add-new-address").click(function() {
+				var formData = {};
+				$("#form-add-new-address").serializeArray().forEach(function(item) {
+					formData[item.name] = item.value;
+				});
+
+				$.ajax({
+					url: "../api/addresses/",
+					type: "POST",
+					data: JSON.stringify(formData),  // 确保数据被正确地转换为 JSON 字符串
+					dataType: "json",
+					contentType: "application/json",  // 明确指定 Content-Type
+					success: function (json) {
+						console.log("Success response:", json);
+						if (json.code === 200) {
+							alert("新地址添加成功！");
+						} else {
+							alert("添加新地址失败！" + json.message);
+						}
+					},
+					error: function (xhr) {
+						alert("发生未知错误！" + xhr.status);
+					}
+				});
+			});
+        </script>
+    </body>
+</html>

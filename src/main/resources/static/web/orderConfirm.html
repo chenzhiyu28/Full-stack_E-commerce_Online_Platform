@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<!--edge browser H5 compatibility setting-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--360 browser H5 compatibility setting-->
+	<meta name="renderer" content="webkit" />
+	<title>Computer Store</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Import core files-->
+	<script src="../bootstrap3/js/holder.js"></script>
+	<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+	<script src="../bootstrap3/js/bootstrap.js"></script>
+	<!-- Font icons -->
+	<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="../css/top.css" />
+	<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="../css/orderConfirm.css" />
+	<link rel="stylesheet" type="text/css" href="../css/cart.css" />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<!--		<script src="../js/orderConfirm.js" type="text/javascript" charset="utf-8"></script>-->
+</head>
+
+<body>
+<!--Header-->
+<header class="header">
+	<!--Computer store logo-->
+	<div class="row">
+		<div class="col-md-3">
+			<a href="index.html">
+				<img src="../images/index/stumalllogo.png" />
+			</a>
+		</div>
+		<!--Quick options-->
+		<div class="col-md-9 top-item">
+			<ul class="list-inline pull-right">
+				<li><a href="favorites.html"><span class="fa fa-heart"></span>&nbsp;Favorites</a></li>
+				<li class="li-split">|</li>
+				<li><a href="orders.html"><span class="fa fa-file-text"></span>&nbsp;Orders</a></li>
+				<li class="li-split">|</li>
+				<li><a href="cart.html"><span class="fa fa-cart-plus"></span>&nbsp;Cart</a></li>
+				<li class="li-split">|</li>
+				<li>
+					<!--Dropdown list button: Manage-->
+					<div class="btn-group">
+						<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+							<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Manage <span class="caret"></span></span>
+						</button>
+						<ul class="dropdown-menu top-dropdown-ul" role="menu">
+							<li><a href="password.html">Change Password</a></li>
+							<li><a href="userdata.html">Personal Information</a></li>
+							<li><a href="upload.html">Upload Avatar</a></li>
+							<li><a href="address.html">Shipping Management</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="li-split">|</li>
+				<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Login</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<!--Navigation -->
+<!--Separator between navigation and top-->
+<div class="row top-nav">
+	<div class="col-md-6">
+		<ul class="nav nav-pills">
+			<li>
+				<a href="#"></a>
+			</li>
+			<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+			<li><a href="#">Flash Sale</a></li>
+			<li><a href="#">Coupons</a></li>
+			<li><a href="#">Computer VIP</a></li>
+			<li><a href="#">Takeout</a></li>
+			<li><a href="#">Supermarket</a></li>
+		</ul>
+	</div>
+	<div class="col-md-6">
+		<form action="search.html" class="form-inline pull-right" role="form">
+			<div class="form-group">
+				<input type="text" class="form-control" id="search" name="search" placeholder="Please enter product name to search">
+			</div>
+			<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+		</form>
+	</div>
+</div>
+<!--Header ends-->
+<!--Navigation ends-->
+<div class="container">
+	<div class="col-md-offset-1 col-md-10">
+		<div class="col-md-4">
+			<div class="col-md-12 order-bar-active">
+				1.Confirm Order Information
+				<span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="col-md-12 order-bar-undo">
+				2.Online Payment
+				<span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="col-md-12 order-bar-undo">
+				3.Payment Successful
+			</div>
+		</div>
+		<div class="col-md-12">
+			<form id="form-create-order" role="form">
+				<div class="form-group">
+					<label for="name">
+						<p>Select Shipping Address:</p>
+					</label>
+					<select name="aid" id="address-list" class="form-control">
+						<option>Bajie&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;No. 6, 3rd Row, Gaolaozhuang, Fangshan District, Beijing&nbsp;&nbsp;&nbsp;1380***1234</option>
+						<option>Bajie&nbsp;&nbsp;&nbsp;Company&nbsp;&nbsp;&nbsp;Room 1001, No. 1 Zhongguancun Middle Road, Haidian District, Beijing&nbsp;&nbsp;&nbsp;1380***1234</option>
+						<option>Bajie&nbsp;&nbsp;&nbsp;Dormitory&nbsp;&nbsp;&nbsp;No. 30, Yongfeng Town, Haidian District, Beijing&nbsp;&nbsp;&nbsp;1380***1234</option>
+					</select>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<p class="panel-title">Order Product Information:</p>
+					</div>
+					<div class="panel-body">
+						<table class="cart-table" width="100%">
+							<thead>
+							<tr>
+								<th width="15%"></th>
+								<th width="35%">Product</th>
+								<th width="15%">Unit Price</th>
+								<th width="15%">Quantity</th>
+								<th width="20%">Amount</th>
+							</tr>
+							</thead>
+							<tbody id="cart-list" class="cart-body">
+							<tr>
+								<td><img src="../images/portal/12DELLXPS13-silvery/collect.png" class="img-responsive" /></td>
+								<td>Lenovo (Lenovo) Xiaoxin Air13 Pro 13.3-inch 14.8mm Ultra-thin Laptop</td>
+								<td>¥<span>5298</span></td>
+								<td>1</td>
+								<td><span>5298</span></td>
+							</tr>
+							</tbody>
+						</table>
+						<div class="total-bar">
+							&nbsp;
+							<span class="pull-right">Selected Products
+										<span id="all-count">1</span> item(s) Total ¥
+										<span id="all-price">5298</span>
+									</span>
+						</div>
+					</div>
+				</div>
+				<div class="pay-bar">
+					<a href="cart.html">Return to Cart</a>
+					<span class="pull-right"><input id="btn-create-order" type="button" value="Online Payment" class="btn btn-primary btn-lg link-pay"/></span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!--Footer starts-->
+<div class="clearfix"></div>
+<footer class="footer">
+	<!-- Quality assurance, personalized customization, etc.-->
+	<div class="text-center rights container">
+		<div class="col-md-offset-2 col-md-2">
+			<span class="fa fa-thumbs-o-up"></span>
+			<p>High Quality</p>
+		</div>
+		<div class="col-md-2">
+			<span class="fa fa-address-card-o"></span>
+			<p>Private Customization</p>
+		</div>
+		<div class="col-md-2">
+			<span class="fa fa-graduation-cap"></span>
+			<p>Student Discount</p>
+		</div>
+		<div class="col-md-2">
+			<span class="fa fa-bitcoin"></span>
+			<p>Exclusive Privilege</p>
+		</div>
+	</div>
+	<!--Contact us, download client, etc.-->
+	<div class="container beforeBottom">
+		<div class="col-md-offset-1 col-md-3">
+			<div><img src="../images/index/stumalllogo.png" alt="" class="footLogo" /></div>
+			<div><img src="../images/index/footerFont.png" alt="" /></div>
+		</div>
+		<div class="col-md-4 callus text-center">
+			<div class="col-md-4">
+				<ul>
+					<li><a href="#"><p>Help</p></a></li>
+					<li><a href="#">Guidance</a></li>
+					<li><a href="#">Service</a></li>
+					<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<ul>
+					<li><a href="#"><p>Seller Connect</p></a></li>
+					<li><a href="#">Seller Register</a></li>
+					<li><a href="#">Seller Backend</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<ul>
+					<li><a href="#"><p>About Us</p></a></li>
+					<li><a href="#">About Store</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li>
+						<span class="fa fa-wechat"></span>
+						<span class="fa fa-weibo"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="col-md-5">
+				<p>Computer Store Client</p>
+				<img src="../images/index/ios.png" class="lf">
+				<img src="../images/index/android.png" alt="" class="lf" />
+			</div>
+			<div class="col-md-6">
+				<img src="../images/index/erweima.png">
+			</div>
+		</div>
+	</div>
+	<!-- Page footer - filing number #footer -->
+</footer>
+<!--Footer ends-->
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				showCartList();
+				showAddressList();
+			});
+
+			function showCartList() {
+				$("#cart-list").empty();
+				$.ajax({
+					url: "../api/cart/",
+					data: location.search.substr(1),
+					type: "GET",
+					dataType: "JSON",
+					success: function(json) {
+						let list = json.data;
+						console.log("count=" + list.length);
+						let allCount = 0;
+						let allPrice = 0;
+						for (let i = 0; i < list.length; i++) {
+							console.log(list[i].title);
+							let tr = '<tr>'
+									+ '<td><img src="..#{image}collect.png" class="img-responsive" /></td>'
+									+ '<td><input type="hidden" name="cids" value="#{cid}" />#{title}</td>'
+									+ '<td>¥<span>#{realPrice}</span></td>'
+									+ '<td>#{num}</td>'
+									+ '<td>¥<span>#{totalPrice}</span></td>'
+									+ '</tr>';
+
+							tr = tr.replace(/#{cid}/g, list[i].cartId);
+							tr = tr.replace(/#{image}/g, list[i].productImage);
+							tr = tr.replace(/#{title}/g, list[i].productTitle);
+							tr = tr.replace(/#{realPrice}/g, list[i].productPrice);
+							tr = tr.replace(/#{num}/g, list[i].cartNum);
+							tr = tr.replace(/#{totalPrice}/g, list[i].productPrice * list[i].cartNum);
+
+							$("#cart-list").append(tr);
+
+							allCount += list[i].cartNum;
+							allPrice += list[i].productPrice * list[i].cartNum;
+						}
+						$("#all-count").html(allCount);
+						$("#all-price").html(allPrice);
+					},
+					error: function () {
+						alert("Failed to get Cart List！");
+					}
+				});
+			}
+
+			function showAddressList() {
+				$("#address-list").empty();
+				$.ajax({
+					url: "../api/addresses",
+					type: "GET",
+					dataType: "JSON",
+					success: function(json) {
+						let list = json.data;
+						console.log("count=" + list.length);
+
+						for (let i = 0; i < list.length; i++) {
+							console.log(list[i].name);
+							let opt = '<option value="#{aid}">#{name} | #{tag} | #{fullAddress} | #{phone}</option>';
+
+							opt = opt.replace(/#{aid}/g, list[i].aid);
+							opt = opt.replace(/#{tag}/g, list[i].tag);
+							opt = opt.replace("#{name}", list[i].name);
+							opt = opt.replace("#{fullAddress}", list[i].fullAddress);
+							opt = opt.replace("#{address}", list[i].address);
+							opt = opt.replace("#{phone}", list[i].phone);
+
+							$("#address-list").append(opt);
+						}
+					}
+				});
+			}
+
+			$("#btn-create-order").click(function() {
+				$.ajax({
+					url: "../api/order",
+					data: $("#form-create-order").serialize(),
+					type: "POST",
+					dataType: "JSON",
+					success: function(json) {
+						if (json.code === 200) {
+							alert("Successfully create your order！");
+							console.log(json.data);
+						} else {
+							alert("Failed to create your order！" + json.message);
+						}
+					},
+					error: function(xhr) {
+						alert("Your session has expired, Login again！：" + xhr.status);
+						location.href = "login.html";
+					}
+				});
+			});
+
+		</script>
+
+	</body>
+
+</html>

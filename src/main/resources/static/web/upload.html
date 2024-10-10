@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--Edge browser H5 compatibility settings-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--360 browser H5 compatibility settings-->
+	<meta name="renderer" content="webkit" />
+	<title>Computer Store</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Import core files-->
+	<script src="../bootstrap3/js/holder.js"></script>
+	<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+	<script src="../bootstrap3/js/bootstrap.js"></script>
+	<!-- Font icons -->
+	<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="../css/top.css" />
+	<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<script src="../bootstrap3/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<!--Header-->
+<header class="header">
+	<!--Computer store logo-->
+	<div class="row">
+		<div class="col-md-3">
+			<a href="index.html">
+				<img src="../images/index/stumalllogo.png" />
+			</a>
+		</div>
+		<!--Quick options-->
+		<div class="col-md-9 top-item">
+			<ul class="list-inline pull-right">
+				<li><a href="favorites.html"><span class="fa fa-heart"></span>&nbsp;Favorites</a></li>
+				<li class="li-split">|</li>
+				<li><a href="orders.html"><span class="fa fa-file-text"></span>&nbsp;Orders</a></li>
+				<li class="li-split">|</li>
+				<li><a href="cart.html"><span class="fa fa-cart-plus"></span>&nbsp;Cart</a></li>
+				<li class="li-split">|</li>
+				<li>
+					<!--Dropdown list button: Manage-->
+					<div class="btn-group">
+						<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+							<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Manage <span class="caret"></span></span>
+						</button>
+						<ul class="dropdown-menu top-dropdown-ul" role="menu">
+							<li><a href="password.html">Change Password</a></li>
+							<li><a href="userdata.html">Personal Information</a></li>
+							<li><a href="upload.html">Upload Avatar</a></li>
+							<li><a href="address.html">Shipping Address Management</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="li-split">|</li>
+				<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Login</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<!--Navigation-->
+<!--Divide navigation and top-->
+<div class="row top-nav">
+	<div class="col-md-6">
+		<ul class="nav nav-pills">
+			<li>
+				<a href="#"></a>
+			</li>
+			<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+			<li><a href="#">Flash Sale</a></li>
+			<li><a href="#">Coupons</a></li>
+			<li><a href="#">Computer VIP</a></li>
+			<li><a href="#">Takeout</a></li>
+			<li><a href="#">Supermarket</a></li>
+		</ul>
+	</div>
+	<div class="col-md-6">
+		<form action="search.html" class="form-inline pull-right" role="form">
+			<div class="form-group">
+				<input type="text" class="form-control" id="search" name="search" placeholder="Please enter product name to search">
+			</div>
+			<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+		</form>
+	</div>
+</div>
+<!--Header ends-->
+<!--Navigation ends-->
+<div class="container">
+	<div class="col-md-2">
+		<!--Left navigation starts-->
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<!--Main option: My Orders-->
+					<p class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">My Orders</a>
+					</p>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse">
+					<div class="panel-body">
+						<div><a href="orders.html">All Orders</a></div>
+						<div><a href="orders.html">Pending Payment</a></div>
+						<div><a href="orders.html">Pending Delivery</a></div>
+						<div><a href="orders.html">Pending Review</a></div>
+						<div><a href="orders.html">Returns and Refunds</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<!--Main option: Edit Profile-->
+					<p class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Edit Profile</a>
+					</p>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse in">
+					<div class="panel-body">
+						<div><a href="password.html">Change Password</a></div>
+						<div><a href="userdata.html">Personal Information</a></div>
+						<div><a href="upload.html"><b>Upload Avatar</b></a></div>
+						<div><a href="address.html">Shipping Address Management</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Left navigation ends-->
+	</div>
+	<div class="col-md-10	">
+		<div class="panel panel-default">
+			<ul class="nav nav-tabs">
+				<li><a href="password.html">Change Password</a></li>
+				<li><a href="userdata.html">Personal Information</a></li>
+				<li class="active"><a href="#">Upload Avatar</a></li>
+				<li><a href="address.html">Shipping Address Management</a></li>
+			</ul>
+			<div class="panel-body">
+				<!--Upload avatar form starts-->
+				<form id="form-change-avatar" class="form-horizontal" role="form">
+					<div class="form-group">
+						<label class="col-md-2 control-label">Select Avatar:</label>
+						<div class="col-md-5">
+							<img id="img-avatar" src="../images/index/user.jpg" class="img-responsive" />
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-md-offset-2 col-md-4">
+							<input type="file" name="file">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button id="btn-change-avatar" type="button" class="btn btn-primary"> Upload </button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Footer starts-->
+<div class="clearfix"></div>
+<footer class="footer">
+	<!-- Quality assurance, custom tailoring, etc.-->
+	<div class="text-center rights container">
+		<div class="col-md-offset-2 col-md-2">
+			<span class="fa fa-thumbs-o-up"></span>
+			<p>High Quality</p>
+		</div>
+		<div class="col-md-2">
+			<span class="fa fa-address-card-o"></span>
+			<p>Private Customization</p>
+		</div>
+		<div class="col-md-2">
+			<span class="fa fa-graduation-cap"></span>
+			<p>Student Discount</p>
+		</div>
+		<div class="col-md-2">
+			<span class="fa fa-bitcoin"></span>
+			<p>Exclusive Privilege</p>
+		</div>
+	</div>
+	<!--Contact us, download client, etc.-->
+	<div class="container beforeBottom">
+		<div class="col-md-offset-1 col-md-3">
+			<div><img src="../images/index/stumalllogo.png" alt="" class="footLogo" /></div>
+			<div><img src="../images/index/footerFont.png" alt="" /></div>
+		</div>
+		<div class="col-md-4 callus text-center">
+			<div class="col-md-4">
+				<ul>
+					<li><a href="#"><p>Help</p></a></li>
+					<li><a href="#">Guidance</a></li>
+					<li><a href="#">Service</a></li>
+					<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<ul>
+					<li><a href="#"><p>Seller Connect</p></a></li>
+					<li><a href="#">Seller Register</a></li>
+					<li><a href="#">Seller Backend</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<ul>
+					<li><a href="#"><p>About Us</p></a></li>
+					<li><a href="#">About Store</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li>
+						<span class="fa fa-wechat"></span>
+						<span class="fa fa-weibo"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="col-md-5">
+				<p>Computer Store Client</p>
+				<img src="../images/index/ios.png" class="lf">
+				<img src="../images/index/android.png" alt="" class="lf" />
+			</div>
+			<div class="col-md-6">
+				<img src="../images/index/erweima.png">
+			</div>
+		</div>
+	</div>
+	<!-- Page footer - filing number #footer -->
+</footer>
+<!--Footer ends-->
+<script>
+	$(document).ready(function () {
+		let avatar = $.cookie("avatar");
+		$("#img-avatar").attr("src", avatar);
+	})
+
+	$("#btn-change-avatar").click(function() {
+		$.ajax({
+			url: "../api/users/avatar",
+			type: "POST",
+			data: new FormData($("#form-change-avatar")[0]),
+			dataType: "JSON",
+			processData: false, // disable data processing (default mode: string)
+			contentType: false, // disable content type (default mode: application/x-www-form-urlencoded)
+			success: function(json) {
+				if (json.code === 200) {
+					alert("Avatar uploaded successfully！");
+					$("#img-avatar").attr("src", json.data) // Set src for tag with id=img-avatar
+					$.cookie("avatar", json.data, {expires: 7});
+					// location.href = "upload.html";
+				} else {
+					alert("Failed to change avatar！" + json.message);
+				}
+			},
+			error: function(xhr) {
+				alert("Your session has expired!" + xhr.status);
+				location.href = "login.html";
+			}
+		});
+	});
+</script>
+
+</body>
+
+</html>

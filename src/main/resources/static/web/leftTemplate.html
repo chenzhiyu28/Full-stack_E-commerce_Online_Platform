@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--edge浏览器H5兼容设置-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--360浏览器H5兼容设置-->
+		<meta name="renderer" content="webkit" />
+		<title>Computer Store</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--导入核心文件-->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<!-- 字体图标 -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+	</head>
+	<body>
+		<!--左侧导航开始-->
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<!--主选项：我的订单-->
+					<p class="panel-title">
+                			<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">My orders</a>
+            			</p>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse">
+					<div class="panel-body">
+						<div><a href="orders.html">All Orders</a></div>
+						<div><a href="orders.html">Unpaid</a></div>
+						<div><a href="orders.html">Unreceived</a></div>
+						<div><a href="orders.html">Uncommented</a></div>
+						<div><a href="orders.html">Refund</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<!--主选项：资料修改-->
+					<p class="panel-title">
+               			<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Modify</a>
+            		</p>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse">
+					<div class="panel-body">
+						<div><a href="password.html">Change Password</a></div>
+						<div><a href="userdata.html">Profile</a></div>
+						<div><a href="upload.html">Upload Avatar</a></div>
+						<div><a href="address.html">Address</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--左侧导航结束-->
+	</body>
+</html>
