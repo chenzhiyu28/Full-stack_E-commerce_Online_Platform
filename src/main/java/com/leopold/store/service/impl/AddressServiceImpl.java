@@ -90,6 +90,7 @@ public class AddressServiceImpl implements IAddressService {
     public AddressDTO setDefaultAddress(Integer aid, Integer uid, String modifiedUser) {
         Address selectedAddress = addressRepository.findAddressById(aid);
 
+        // if address exists
         if (selectedAddress == null) {
             throw new AddressNotExistException("Address does not exist!");
         } else if (!selectedAddress.getUser().getId().equals(uid)) {
@@ -98,8 +99,8 @@ public class AddressServiceImpl implements IAddressService {
 
         Date modifiedTime = new Date();
 
+        // make other default addresses not default
         List<Address> defaultAddresses = findDefaultAddressByUser(selectedAddress.getUser().getId());
-
         for (Address address : defaultAddresses) {
             if (address.getIsDefault() == 1) {
                 address.setIsDefault(0);
@@ -108,7 +109,6 @@ public class AddressServiceImpl implements IAddressService {
                 addressRepository.save(address);
             }
         }
-
         selectedAddress.setIsDefault(1);
         selectedAddress.setModifiedUser(modifiedUser);
         selectedAddress.setModifiedTime(modifiedTime);
