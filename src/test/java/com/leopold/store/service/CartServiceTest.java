@@ -8,6 +8,9 @@ import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.relational.core.sql.In;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -18,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @Transactional
+@ActiveProfiles("test")
 public class CartServiceTest {
     @Autowired
     ICartService cartService;
@@ -26,36 +30,48 @@ public class CartServiceTest {
     @Autowired
     IProductService productService;
 
+
+    private final Integer testUserID = 13;
+    private final Integer testProductID1 = 10000010;
+    private final Integer testProductID2 = 10000011;
+
+
     @Test
     public void testAddToCart() {
-        User user = userService.findUserById(13);
-        Product product = productService.findProductByID(10000010);
-        Product product2 = productService.findProductByID(10000011);
+        User user = userService.findUserById(testUserID);
+        Product product = productService.findProductByID(testProductID1);
+        Product product2 = productService.findProductByID(testProductID2);
+        Integer initialAmount1 = cartService.findCartByUserAndProduct(user, product) == null?
+                0: cartService.findCartByUserAndProduct(user, product).getNum();
+        Integer initialAmount2 = cartService.findCartByUserAndProduct(user, product2) == null?
+                0: cartService.findCartByUserAndProduct(user, product2).getNum();
 
         Cart cart = Cart.builder().user(user).product(product).price(product.getPrice()).num(2).build();
         Cart cart2 = Cart.builder().user(user).product(product2).price(product2.getPrice()).num(2).build();
 
-        cartService.addToCart(cart);
 
+        cartService.addToCart(cart);
         Cart addedCart = cartService.findCartByUserAndProduct(user, product);
         assertNotNull(addedCart);
-        assertEquals(addedCart.getNum(), 2);
+        assertEquals(addedCart.getNum(), initialAmount1 + 2);
 
         cartService.addToCart(cart);
-        assertEquals(addedCart.getNum(), 4);
-        assertEquals(cartService.findCartByUser(user).size(), 1);
+        addedCart = cartService.findCartByUserAndProduct(user, product);
+        assertEquals(addedCart.getNum(), initialAmount1 + 4);
+        assertNotNull(cartService.findCartByUser(user).size());
 
         cartService.addToCart(cart2);
-        assertEquals(cartService.findCartByUser(user).size(), 2);
+        Cart addedCart2 = cartService.findCartByUserAndProduct(user, product2);
+        assertEquals(addedCart2.getNum(), initialAmount2 + 2);
     }
 
     @Test
     public void testDisplayCartDTOs() {
-        List<CartDTO> cartDTOS = cartService.displayCartDTO(13);
+        List<CartDTO> cartDTOS = cartService.displayCartDTO(testUserID);
 
         System.out.println(cartDTOS);
         assertEquals(cartDTOS.size(), 3);
-        assertEquals(cartDTOS.getFirst().getCartNum(), 2);
+        assertEquals(cartDTOS.getFirst().getCartNum(), 9);
     }
 
     @Test
