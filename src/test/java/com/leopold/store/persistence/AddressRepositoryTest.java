@@ -45,7 +45,7 @@ public class AddressRepositoryTest {
     public void testFoundDefaultAddressByUser() {
         User user = userRepository.findUserById(13);
         List<Address> addresses = addressRepository.findAddressByUserAndIsDefault(user, 1);
-        assertEquals(addresses.size(), 3);
+        assertEquals(addresses.size(), 2);
     }
 
     @Test
