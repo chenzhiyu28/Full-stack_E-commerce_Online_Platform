@@ -5,7 +5,7 @@ A robust, full-stack e-commerce solution built with SpringBoot and jQuery, showc
 ## Project Highlights
 
 - **Full-Stack Integration**: Seamless user experience from registration to order completion.
-- **Performance Optimized**: Implements Redis caching and efficient API design, handling 10,000+ QPS.
+- **Performance Optimized**: Implements Redis caching and efficient API design, handling 2,000+ QPS.
 - **Cloud Ready**: Deployed on AWS (EC2, RDS, VPC) for scalability and cost-efficiency.
 - **Quality Assured**: 100% core functionality test coverage using Mockito and JUnit.
 
